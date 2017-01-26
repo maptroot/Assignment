@@ -28,41 +28,45 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
         store.fetchRecentPhotos() {
             (photosResult) -> Void in
             
-            
             OperationQueue.main.addOperation {
                 switch photosResult {
                 case let .Success(photos):
                     self.photoDataSource.photos = photos
                 case let .Failure(error):
                     self.photoDataSource.photos.removeAll()
-                    
                 }
                 self.collectionView.reloadData()
-               // self.collectionView.reloadSections(IndexSet(integer: 0))
             }
         }
-        
-        
     }
     
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         let photo = photoDataSource.photos[indexPath.row]
-        
-        
         let lastPhoto = photoDataSource.photos.count - 25
         
         
-        // check if come to the last image in collectionview
         if indexPath.row == lastPhoto  {
-            //print("laatste foto")
-            fetch()
-            
+            store.fetchRecentPhotos() {
+                (photosResult) -> Void in
+                
+                OperationQueue.main.addOperation {
+                    switch photosResult {
+                    case let .Success(photos):
+                        
+                        for photo in photos {
+                            self.photoDataSource.photos.append(photo)
+                        }
+                        
+                    case let .Failure(error):
+                        self.photoDataSource.photos.removeAll()
+                        
+                    }
+                    self.collectionView.reloadData()
+                }
+            }
         }
-        
-        
-        
         
         store.fetchImageForPhoto(photo: photo, size: .Small) { (result) in
             
@@ -70,18 +74,12 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
                 let photoIndex = self.photoDataSource.photos.index(of: photo)!
                 let photoIndexPath = IndexPath(item: photoIndex, section: 0)
                 
-                
-                
-                
-                
                 if let cell = self.collectionView.cellForItem(at: photoIndexPath) as? PhotoCollectionViewCell {
                     cell.updateWithImage(image: photo.image)
                 }
             }
         }
     }
-    
-    
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -101,33 +99,5 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
             }
         }
     }
-    
-    
-    
-    func fetch() {
-        store.fetchRecentPhotos() {
-            (photosResult) -> Void in
-            
-            
-           OperationQueue.main.addOperation {
-                switch photosResult {
-                case let .Success(photos):
-                    
-                    for photo in photos {
-                        self.photoDataSource.photos.append(photo)
-                    }
-                    
-                    
-                    
-                //self.photoDataSource.photos = photos
-                case let .Failure(error):
-                    self.photoDataSource.photos.removeAll()
-                    
-                }
-                self.collectionView.reloadData()
-        }
-        }
-        
-    }
-    
 }
+

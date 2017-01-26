@@ -46,8 +46,7 @@ struct FlickrAPI {
             let urlSmall = NSURL(string: photoURLStringSmall),
             let urlBig = NSURL(string: photoURLStringBig),
             let dateTaken = dateFormatter.date(from: dateString) else {
-                
-                // doe niks
+
                 return nil
         }
         
@@ -89,9 +88,7 @@ struct FlickrAPI {
     
     static func recentPhotosURL(page: Int) -> NSURL {
         
-        
-        
-        return flickrURL(method: .RecentPhotos, parameters: ["per_page": "50", "page": String(page), "extras": "url_s,url_h,date_taken"])
+        return flickrURL(method: .RecentPhotos, parameters: ["per_page": "60", "page": String(page), "extras": "url_s,url_h,date_taken"])
     }
     
     

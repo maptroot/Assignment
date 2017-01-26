@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Flickr Photo's-->
+        <!--Flickr Recent Photos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PhotosViewController" customModule="FlickrApi" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,7 +24,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yZS-uG-7sl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="hjC-Ga-nLi">
                                     <size key="itemSize" width="90" height="90"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -41,15 +41,15 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w0n-UK-sUW">
                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="fRl-Du-z2W">
                                                     <rect key="frame" x="8" y="8" width="74" height="74"/>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="w0n-UK-sUW" firstAttribute="top" secondItem="b8z-Ua-1B1" secondAttribute="top" id="A6a-H0-9Jk"/>
                                             <constraint firstAttribute="trailing" secondItem="w0n-UK-sUW" secondAttribute="trailing" id="Hg6-vp-zoy"/>
@@ -76,8 +76,8 @@
                             <constraint firstItem="yZS-uG-7sl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="x82-gh-ILo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Flickr Photo's" id="2Fk-Rf-Aaa">
-                        <barButtonItem key="backBarButtonItem" title="Photo Grid" id="7EM-i8-OFZ"/>
+                    <navigationItem key="navigationItem" title="Flickr Recent Photos" id="2Fk-Rf-Aaa">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="vLw-wb-nct"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="yZS-uG-7sl" id="cGW-yi-3Gn"/>
@@ -102,7 +102,7 @@
                         <subviews>
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pVc-XD-l0a">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="QYs-Yo-4Bj" customClass="CenterCellCollectionViewFlowLayout" customModule="FlickrApi" customModuleProvider="target">
                                     <size key="itemSize" width="314" height="447"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -122,10 +122,11 @@
                                                 </imageView>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="I8f-th-YWh">
                                                     <rect key="frame" x="0.0" y="0.0" width="314" height="0.0"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="NgW-6S-nOb" firstAttribute="leading" secondItem="KsD-2W-tdQ" secondAttribute="leading" id="61g-pG-akl"/>
                                             <constraint firstItem="I8f-th-YWh" firstAttribute="leading" secondItem="KsD-2W-tdQ" secondAttribute="leading" id="AOi-wO-zGI"/>
@@ -145,7 +146,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="pVc-XD-l0a" secondAttribute="trailing" id="65R-kI-9bk"/>
                             <constraint firstAttribute="bottom" secondItem="pVc-XD-l0a" secondAttribute="bottom" id="Bkx-6U-9ST"/>
@@ -166,9 +167,12 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hAL-xT-qkD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rY3-P9-ShG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="blackTranslucent" id="rY3-P9-ShG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

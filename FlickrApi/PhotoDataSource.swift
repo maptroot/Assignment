@@ -18,8 +18,6 @@ class PhotoDataSource: NSObject, UICollectionViewDataSource {
         return photos.count
     }
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = "UICollectionViewCell"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! PhotoCollectionViewCell

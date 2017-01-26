@@ -26,6 +26,8 @@ class FullViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         collectionView.dataSource = photoDataSource
         collectionView.delegate = self
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -24,8 +24,7 @@ enum PhotoSize {
 }
 
 class PhotoStore {
-    
-    
+
     var page: Int = 0
     
     
@@ -61,9 +60,6 @@ class PhotoStore {
     func fetchImageForPhoto(photo: Photo, size: PhotoSize, completion: @escaping (ImageResult) -> Void) {
         
         let photoSize = size
-        
-        
-        
         
         if let image = photo.image {
             if photo.size == photoSize {

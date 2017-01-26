@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlickrApi/PhotoStore.swift"
-            timestampString = "507123383.318963"
+            timestampString = "507136504.369691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "fetchRecentPhotos(completion:)"
             landmarkType = "7">
          </BreakpointContent>
