@@ -13,7 +13,7 @@
         <!--Flickr Recent Photos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PhotosViewController" customModule="FlickrApi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PhotosViewController" customModule="Flickr_Photos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -32,7 +32,7 @@
                                     <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="2"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UICollectionViewCell" id="b8z-Ua-1B1" customClass="PhotoCollectionViewCell" customModule="FlickrApi" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UICollectionViewCell" id="b8z-Ua-1B1" customClass="PhotoCollectionViewCell" customModule="Flickr_Photos" customModuleProvider="target">
                                         <rect key="frame" x="2" y="2" width="90" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -91,7 +91,7 @@
         <!--Full View Controller-->
         <scene sceneID="65e-H4-oK6">
             <objects>
-                <viewController id="wkE-Ds-7h9" customClass="FullViewController" customModule="FlickrApi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wkE-Ds-7h9" customClass="FullViewController" customModule="Flickr_Photos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Ce-VC-XSC"/>
                         <viewControllerLayoutGuide type="bottom" id="CSU-Vx-gBn"/>
@@ -103,14 +103,14 @@
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pVc-XD-l0a">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="QYs-Yo-4Bj" customClass="CenterCellCollectionViewFlowLayout" customModule="FlickrApi" customModuleProvider="target">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="QYs-Yo-4Bj" customClass="CenterCellCollectionViewFlowLayout" customModule="Flickr_Photos" customModuleProvider="target">
                                     <size key="itemSize" width="314" height="447"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="UICollectionViewCell" id="KsD-2W-tdQ" customClass="PhotoCollectionViewCell" customModule="FlickrApi" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="UICollectionViewCell" id="KsD-2W-tdQ" customClass="PhotoCollectionViewCell" customModule="Flickr_Photos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="78" width="314" height="447"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -120,27 +120,26 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NgW-6S-nOb">
                                                     <rect key="frame" x="0.0" y="0.0" width="314" height="447"/>
                                                 </imageView>
-                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="I8f-th-YWh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="314" height="0.0"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="w0z-5V-6vN">
+                                                    <rect key="frame" x="8" y="8" width="298" height="431"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="NgW-6S-nOb" firstAttribute="leading" secondItem="KsD-2W-tdQ" secondAttribute="leading" id="61g-pG-akl"/>
-                                            <constraint firstItem="I8f-th-YWh" firstAttribute="leading" secondItem="KsD-2W-tdQ" secondAttribute="leading" id="AOi-wO-zGI"/>
                                             <constraint firstItem="NgW-6S-nOb" firstAttribute="top" secondItem="KsD-2W-tdQ" secondAttribute="top" id="B8d-7i-jZf"/>
-                                            <constraint firstAttribute="trailing" secondItem="I8f-th-YWh" secondAttribute="trailing" id="DR1-nF-D7R"/>
-                                            <constraint firstItem="NgW-6S-nOb" firstAttribute="top" secondItem="I8f-th-YWh" secondAttribute="bottom" id="PMp-9a-s42"/>
+                                            <constraint firstItem="w0z-5V-6vN" firstAttribute="top" secondItem="KsD-2W-tdQ" secondAttribute="topMargin" id="K63-yd-7sn"/>
                                             <constraint firstAttribute="bottom" secondItem="NgW-6S-nOb" secondAttribute="bottom" id="SK8-hr-Wuo"/>
-                                            <constraint firstItem="I8f-th-YWh" firstAttribute="top" secondItem="KsD-2W-tdQ" secondAttribute="top" id="qBU-0t-eBz"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="w0z-5V-6vN" secondAttribute="trailing" id="XRS-76-K1G"/>
+                                            <constraint firstItem="w0z-5V-6vN" firstAttribute="leading" secondItem="KsD-2W-tdQ" secondAttribute="leadingMargin" id="guj-zT-nfV"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="w0z-5V-6vN" secondAttribute="bottom" id="sTi-DM-cWK"/>
                                             <constraint firstAttribute="trailing" secondItem="NgW-6S-nOb" secondAttribute="trailing" id="sus-hR-bVy"/>
                                         </constraints>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         <connections>
                                             <outlet property="imageView" destination="NgW-6S-nOb" id="mfz-kX-HQq"/>
-                                            <outlet property="spinner" destination="I8f-th-YWh" id="yW9-fN-O4I"/>
+                                            <outlet property="spinner" destination="w0z-5V-6vN" id="2E3-M5-KhG"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
