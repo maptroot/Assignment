@@ -28,7 +28,7 @@
 		9C4F70C61E3648190083B889 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		9C4F70C81E374FA40083B889 /* PhotoDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
 		9C704FD61E37FA5A003EE2E2 /* FullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullViewController.swift; sourceTree = "<group>"; };
-		9C9497181E362B80002EDF08 /* FlickrApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C9497181E362B80002EDF08 /* Flickr Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flickr Photos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C94971B1E362B80002EDF08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C9497201E362B80002EDF08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C9497221E362B80002EDF08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		9C9497191E362B80002EDF08 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9C9497181E362B80002EDF08 /* FlickrApi.app */,
+				9C9497181E362B80002EDF08 /* Flickr Photos.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,7 +102,7 @@
 			);
 			name = FlickrApi;
 			productName = FlickrApi;
-			productReference = 9C9497181E362B80002EDF08 /* FlickrApi.app */;
+			productReference = 9C9497181E362B80002EDF08 /* Flickr Photos.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -291,7 +291,7 @@
 				INFOPLIST_FILE = FlickrApi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aptroot.FlickrApi;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Flickr Photos";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -304,7 +304,7 @@
 				INFOPLIST_FILE = FlickrApi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aptroot.FlickrApi;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Flickr Photos";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
