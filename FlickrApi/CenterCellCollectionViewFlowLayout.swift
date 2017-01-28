@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+
+// Give a fullscreen paging effect to the collectionview
 class CenterCellCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {

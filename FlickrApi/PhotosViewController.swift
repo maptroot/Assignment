@@ -24,52 +24,53 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
         collectionView.dataSource = photoDataSource
         collectionView.delegate = self
         
-        
+        // get photos
         store.fetchRecentPhotos() {
             (photosResult) -> Void in
             
+            // Use main thread
             OperationQueue.main.addOperation {
                 switch photosResult {
                 case let .Success(photos):
+                    // Fill collectionview
                     self.photoDataSource.photos = photos
                 case let .Failure(error):
                     self.photoDataSource.photos.removeAll()
                 }
+                // update collectionview
                 self.collectionView.reloadData()
             }
         }
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
+        
+        // Before we get to the end of the collectionview, we want to start loading new photos
         let photo = photoDataSource.photos[indexPath.row]
         let lastPhoto = photoDataSource.photos.count - 25
-        
         
         if indexPath.row == lastPhoto  {
             store.fetchRecentPhotos() {
                 (photosResult) -> Void in
-                
+                // Use main thread
                 OperationQueue.main.addOperation {
                     switch photosResult {
                     case let .Success(photos):
-                        
-                        for photo in photos {
-                            self.photoDataSource.photos.append(photo)
-                        }
-                        
+                        // Add photos to the existing collectionview
+                        self.photoDataSource.photos.append(contentsOf: photos)
                     case let .Failure(error):
-                        self.photoDataSource.photos.removeAll()
-                        
+                        print(error)
                     }
+                    // update collectionview
                     self.collectionView.reloadData()
                 }
             }
         }
         
+        // Fetch small size images
         store.fetchImageForPhoto(photo: photo, size: .Small) { (result) in
-            
+            // Use main thread
             OperationQueue.main.addOperation {
                 let photoIndex = self.photoDataSource.photos.index(of: photo)!
                 let photoIndexPath = IndexPath(item: photoIndex, section: 0)
@@ -81,15 +82,16 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
         }
     }
     
-    
+    // Go to full screen
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedPhotoIndex =  indexPath.row
         
+        // Index of photo we want to show full screen
+        selectedPhotoIndex =  indexPath.row
         self.performSegue(withIdentifier: "ShowFullScreen", sender: self)
     }
     
     
-    
+    // Copy object to new viewcontroller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowFullScreen" {
             if let destinationVC = segue.destination as? FullViewController {

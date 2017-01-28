@@ -10,8 +10,9 @@ import Foundation
 
 enum Method: String {
     
+    
+    // Method gives random recent photos
     case RecentPhotos = "flickr.photos.getRecent"
-    //case RecentPhotos = "flickr.interestingness.getList"
 }
 
 enum PhotosResult {
@@ -27,6 +28,7 @@ enum FlickrError: Error {
 
 struct FlickrAPI {
     
+    // Base URL and key for Flickr API
     fileprivate static let baseURLString = "https://api.flickr.com/services/rest"
     fileprivate static let APIKey = "a6d819499131071f158fd740860a5a88"
     
@@ -37,6 +39,8 @@ struct FlickrAPI {
         return formatter
     }()
     
+    
+    // get Photo from JSON
     fileprivate static func photoFromJSONObject(json: [String: Any]) -> Photo? {
         guard let photoID = json["id"] as? String,
             let title = json["title"] as? String,
@@ -53,6 +57,8 @@ struct FlickrAPI {
         return Photo(title: title, photoID: photoID, remoteURLSmall: urlSmall, remoteURLBig: urlBig, dateTaken: dateTaken)
     }
     
+    
+    // Create URL for Flickr
     fileprivate static func flickrURL(method: Method, parameters: [String:String]?) -> NSURL {
         
         let components = NSURLComponents(string: baseURLString)!
@@ -86,12 +92,15 @@ struct FlickrAPI {
     }
     
     
+    
+    // Extra arguments for Recent Photo method
     static func recentPhotosURL(page: Int) -> NSURL {
         
         return flickrURL(method: .RecentPhotos, parameters: ["per_page": "60", "page": String(page), "extras": "url_s,url_h,date_taken"])
     }
     
     
+    // Read JSON
     static func photosFromJSONData(data: Data) -> PhotosResult {
         do {
             let jsonObject: Any = try JSONSerialization.jsonObject(with: data as Data, options: [])
@@ -119,10 +128,7 @@ struct FlickrAPI {
         catch let error {
             return .Failure(error)
         }
-        
     }
-    
-    
 }
 
 

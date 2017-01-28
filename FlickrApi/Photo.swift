@@ -9,14 +9,15 @@
 import UIKit
 
 
+
 class Photo {
     let title: String
-    let remoteURLSmall: NSURL
-    let remoteURLBig: NSURL
+    let remoteURLSmall: NSURL // link to small image
+    let remoteURLBig: NSURL // link to large image
     let photoID: String
     let dateTaken: Date
-    var size: PhotoSize?
-    var image: UIImage?
+    var size: PhotoSize? // shows if we use small or large image
+    var image: UIImage? // downloade image
     
     
     init(title: String, photoID: String, remoteURLSmall: NSURL, remoteURLBig: NSURL, dateTaken: Date) {

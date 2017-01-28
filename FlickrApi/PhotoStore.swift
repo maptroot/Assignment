@@ -33,12 +33,14 @@ class PhotoStore {
         return URLSession(configuration: config)
     }()
     
-    
+    // Request photos from Flickr
     func fetchRecentPhotos(completion: @escaping (PhotosResult) -> Void) {
         
-        self.page += 1
         
+        // To prevent getting the same batch of photos over and over, we wil ask Flickr for the next page
+        self.page += 1
         let url  = FlickrAPI.recentPhotosURL(page: page)
+        
         let request = URLRequest(url: url as URL)
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
             
@@ -49,6 +51,7 @@ class PhotoStore {
         task.resume()
     }
     
+    // Check if we got data
     func processRecentPhotosRequest(data: Data?, error: Error?) -> PhotosResult {
         guard let jsondData = data else {
             return .Failure(error!)
@@ -57,17 +60,24 @@ class PhotoStore {
         return FlickrAPI.photosFromJSONData(data: jsondData)
     }
     
+    
+    // Get the image for a photo
     func fetchImageForPhoto(photo: Photo, size: PhotoSize, completion: @escaping (ImageResult) -> Void) {
         
+        
+        // Check if we want a different size image if we already have an image
         let photoSize = size
         
         if let image = photo.image {
             if photo.size == photoSize {
+                // We already have image of the correct size
                 completion(.Success(image))
                 return
             }
         }
         
+        
+        // Get URL for requierd size
         var photoURL: URL
         
         switch size {
@@ -86,6 +96,7 @@ class PhotoStore {
             let result = self.processImageRequest(data: data, error: error)
             
             if case let .Success(image) = result {
+                // Set image and size of photo
                 photo.image = image
                 photo.size = photoSize
             }

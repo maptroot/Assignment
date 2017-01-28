@@ -12,7 +12,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var spinner: UIActivityIndicatorView!
     
-    
+    // Show spinner when we download image
     func updateWithImage(image: UIImage?) {
         if let imageToDisplay = image {
             spinner.stopAnimating()

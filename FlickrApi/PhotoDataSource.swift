@@ -9,6 +9,7 @@
 import UIKit
 
 
+// Required functions to fill the collectionview and photo array
 class PhotoDataSource: NSObject, UICollectionViewDataSource {
     
     var photos = [Photo]()
